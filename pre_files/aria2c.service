@@ -1,0 +1,13 @@
+[Unit]
+Description=Aria2c
+
+[Service]
+TimeoutStartSec=0
+ExecStart=/usr/bin/aria2c --conf-path=/usr/local/aria2/aria2.conf
+ExecReload=/bin/kill -HUP $MAINPID
+KillMode=process
+Restart=on-failure
+RestartSec=42s
+
+[Install]
+WantedBy=multi-user.target

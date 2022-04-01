@@ -1,0 +1,21 @@
+server {
+        listen 8081;
+        listen [::]:8081;
+
+        root /home/ubuntu/webdav;
+        index index.html;
+
+        location / {
+                autoindex on;
+                dav_methods PUT DELETE MKCOL COPY MOVE;
+                dav_ext_methods PROPFIND OPTIONS;
+                create_full_put_path on;
+                charset utf-8;
+                dav_access user:rw group:r all:r;
+                client_body_temp_path   /tmp;
+                client_max_body_size    0;
+                auth_basic "admin";
+                auth_basic_user_file /etc/nginx/passwords.list;
+        }
+}
+
