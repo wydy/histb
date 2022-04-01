@@ -131,7 +131,7 @@ case $CHOOSE in
 	;;
 esac
 done
-
+echo "hi3798$bootargs" > target
 cp -a pre_files/bootargs4-$bootargs.bin rootfs/usr/bin/bootargs4.bin
 cp -a pre_files/boot4.sh rootfs/usr/bin/recoverbackup
 chmod 777 rootfs/usr/bin/recoverbackup
