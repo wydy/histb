@@ -158,7 +158,7 @@ cp -a pre_files/wiki/gitweb rootfs/usr/share/bak
 cp -a pre_files/client-mode rootfs/home/ubuntu/
 chmod 777 -R pre_files/sbin
 cp -a pre_files/sbin/* rootfs/sbin
-cp -a pre_files/profile.d/99-helloworld.sh rootfs/etc/profile.d
+cp -a pre_files/profile.d/* rootfs/etc/profile.d
 chmod 777 -R rootfs/etc/profile.d
 sed -i "s/ports.ubuntu.com/mirrors.aliyun.com/g" rootfs/etc/apt/sources.list
 
